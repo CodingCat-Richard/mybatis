@@ -5,8 +5,9 @@
   
 <mapper namespace="com.xiao.dao.IDao">
 
-	<!-- 查询所有 -->
-	<select id="findAll"  parameterType="java.util.Map" resultType="com.xiao.domin.User">
+	<!-- 查询所有
+ -->
+ 	<select id="findAll"  parameterType="java.util.Map" resultType="com.xiao.domin.User">
 		select * from user
 	</select>
 </mapper>

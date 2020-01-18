@@ -19,7 +19,10 @@
 		</environment>
 	</environments>
 <!-- 指定配置文件的位置，映射配置文件指得是每个dao独立的配置文件 -->
+<!-- 如果使用注解的形式就用class属性 -->
 <mappers>
 <mapper resource="com/xiao/dao/IDao.xml"/>
+<!-- <mapper class="com.xiao.dao.IDao"/> -->
 </mappers>
+
 </configuration>
