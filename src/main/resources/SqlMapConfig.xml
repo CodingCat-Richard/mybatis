@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+  
+  <!-- Mybatis configure -->
+<configuration>
+
+<!--Environment configure  -->
+	<environments default="mysql">
+		<environment id="mysql">
+			<transactionManager type="JDBC"></transactionManager>
+			<dataSource type="pooled">
+			<property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+			<property name="username" value="root"/>
+			<property name="password" value="root"/>
+			<property name="url" value="jdbc:mysql://localhost:3306/mybatis?serverTimezone=UTC"/>
+			</dataSource>
+		</environment>
+	</environments>
+<!-- 指定配置文件的位置，映射配置文件指得是每个dao独立的配置文件 -->
+<mappers>
+<mapper resource="com/xiao/dao/IDao.xml"/>
+</mappers>
+</configuration>
