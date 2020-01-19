@@ -1,28 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE configuration
-  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
-  "http://mybatis.org/dtd/mybatis-3-config.dtd">
-  
-  <!-- Mybatis configure -->
-<configuration>
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
 
-<!--Environment configure  -->
+
+<configuration >
+
+<!-- 配置属性，可以放到另一个文件中，通过resource引用 -->
+<!-- <properties>
+	<property  name="drive1" value="com.mysql.cj.jdbc.Driver"/>
+</properties> -->
+<!-- <environments default="mysql">
+<environment id="mysql">
+<transactionManager type="JDBC"></transactionManager>
+<dataSource type="pooled">
+<property name="drive" value="drive1"/>
+</dataSource>
+</environment>
+</environments> 
+ -->
+
+<!-- 别名，比如将com.xiao.admin.User换成User -->
+<!-- <typeAliases type="com.xiao.admin.User" alise="user"></typeAliases> -->
+
 	<environments default="mysql">
 		<environment id="mysql">
 			<transactionManager type="JDBC"></transactionManager>
 			<dataSource type="pooled">
-			<property name="driver" value="com.mysql.cj.jdbc.Driver"/>
-			<property name="username" value="root"/>
-			<property name="password" value="root"/>
-			<property name="url" value="jdbc:mysql://localhost:3306/mybatis?serverTimezone=UTC"/>
+				<property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+				<property name="username" value="root"></property>
+				<property name="password" value="root"/>
+				<property name="url" value="jdbc:mysql://localhost:3306/mybatis?serverTimezone=UTC"></property>
 			</dataSource>
 		</environment>
 	</environments>
-<!-- 指定配置文件的位置，映射配置文件指得是每个dao独立的配置文件 -->
-<!-- 如果使用注解的形式就用class属性 -->
-<mappers>
-<mapper resource="com/xiao/dao/IDao.xml"/>
-<!-- <mapper class="com.xiao.dao.IDao"/> -->
-</mappers>
-
+	<mappers>
+		<!-- <mapper resource="com/xiao/dao/IDao.xml"/> -->
+		<!-- package标签用于指定dao接口所在的包，指定之后不需要写resource 或者class -->
+		<package name="com.xiao.dao"/>
+	</mappers>
 </configuration>

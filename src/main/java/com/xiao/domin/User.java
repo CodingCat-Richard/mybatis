@@ -36,9 +36,9 @@ public class User implements Serializable{
 	}
 	@Override
 	public String toString() {
-		DateFormat format = new SimpleDateFormat("yy-MM-dd");
+		DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 		
-		return name+"\t"+format.format(date)+"\t"+sex;
+		return id+"\t"+name+"\t"+format.format(date)+"\t"+sex;
 	}	
 	
 }
